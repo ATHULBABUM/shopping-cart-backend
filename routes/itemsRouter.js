@@ -2,7 +2,7 @@ const express = require('express');
 var { itemsModel } = require('../models/itemModel');
 const router = express.Router();
 
-router.get('/', (req,res, next)=> {
+router.get('/', (req, res, next)=> {
     itemsModel.find((err, data)=> {
         if (err) {
             res.json({status: 'Error'});
@@ -21,6 +21,6 @@ router.post('/', (req, res, next)=> {
             res.json({status: 'Success', data: result});
         }
     })
-})
+});
 
 module.exports = router;
